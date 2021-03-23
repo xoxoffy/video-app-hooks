@@ -24,10 +24,6 @@ const App = () => {
     setSelectedVideo(response.data.items[0]);
   };
 
-  const onVideoSelect = (clickedVideo) => {
-    setSelectedVideo(clickedVideo);
-  };
-
   return (
     <div className="App">
       <h1>
@@ -40,7 +36,7 @@ const App = () => {
               <VideoDetail video={selectedVideo} />
             </Col>
             <Col>
-              <VideoList onVideoSelect={onVideoSelect} videos={videos} />
+              <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
             </Col>
           </Row>
         </Container>
