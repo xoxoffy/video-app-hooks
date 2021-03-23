@@ -6,23 +6,9 @@ import VideoDetail from "./components/VideoDetail";
 import { Container, Row, Col } from "react-bootstrap";
 
 const App = () => {
-  const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  useEffect(() => {
-    onTermSubmit("");
-  }, []);
-
-  const onTermSubmit = async (searchTerm) => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: searchTerm,
-      },
-    });
-
-    setVideos(response.data.items);
-    setSelectedVideo(response.data.items[0]);
-  };
+  // setSelectedVideo(response.data.items[0]);
 
   return (
     <div className="App">
